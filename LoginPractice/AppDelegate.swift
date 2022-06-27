@@ -18,8 +18,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         
+        let userDefaults = UserDefaults.standard
         let loginScreen = LoginViewController()
-        window?.rootViewController = UINavigationController(rootViewController: loginScreen)
+        
+        if let username = userDefaults.string(forKey: "username"){
+            let homeViewController = HomeViewController()
+            homeViewController.tokenUser = username
+            
+            let navigationController = UINavigationController()
+            navigationController.viewControllers = [loginScreen, homeViewController]
+            window?.rootViewController = navigationController
+        }else{
+            let navigationController = UINavigationController(rootViewController: loginScreen)
+            window?.rootViewController = navigationController
+        }
+//        window?.rootViewController = UINavigationController(rootViewController: loginScreen)
         
         return true
     }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-var tokenUser: String = ""
+
 
 class LoginViewController: UIViewController {
 
@@ -66,10 +66,13 @@ class LoginViewController: UIViewController {
                 lblError.isHidden = false
                 lblError.text = "Loading..."
                 let deadlineTime = DispatchTime.now() + .seconds(1)
-                tokenUser = username
                 DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
                     self.lblError.isHidden = true
+                    
+                    UserDefaults.standard.set(username, forKey: "username")
+                    
                     let homeViewController = HomeViewController()
+                    homeViewController.tokenUser = username
                     UIApplication.shared.delegate?.window??.rootViewController = homeViewController
                 }
                 

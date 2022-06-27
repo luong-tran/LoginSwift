@@ -8,6 +8,8 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    
+    var tokenUser: String = ""
 
     @IBOutlet weak var lblLogout: UILabel!
     @IBOutlet weak var lblHome: UILabel!
@@ -15,6 +17,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationController?.isNavigationBarHidden = true
         // Do any additional setup after loading the view.
         customStyle()
         addEvent()
@@ -25,7 +28,7 @@ class HomeViewController: UIViewController {
         borderBot.backgroundColor = UIColor.tintColor.cgColor
         borderBot.frame = CGRect(x: 0, y: self.lblHome.frame.size.height - 2.0, width: self.lblHome.frame.size.width, height: 2.0)
         lblHome.layer.addSublayer(borderBot)
-        
+        lblHome.layer.masksToBounds = true
         lblWelcome.text = "Welcome <" + tokenUser.uppercased() + ">"
     }
     
@@ -37,8 +40,8 @@ class HomeViewController: UIViewController {
     
     @objc
         func tapFunction(sender:UITapGestureRecognizer) {
+            UserDefaults.standard.set(nil, forKey: "username")
             let loginViewController = LoginViewController()
             UIApplication.shared.delegate?.window??.rootViewController = loginViewController
-            tokenUser = ""
         }
 }
