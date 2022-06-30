@@ -26,12 +26,33 @@ class LoginViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         customStyle()
+        actionLabel()
+        customNavigation()
         lblError.isHidden = true
     }
     @IBAction func btnLogin(_ sender: Any) {
         
         checkNullLogin()
+        
     }
+    
+    func customNavigation(){
+        title = "Login"
+        navigationController?.addCustomBottomLine(color: UIColor.tintColor, height: 2)
+    }
+    
+    
+    func actionLabel(){
+        let tap = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.tapFunction))
+        lblForgotPass.isUserInteractionEnabled = true
+        lblForgotPass.addGestureRecognizer(tap)
+    }
+    
+    @objc
+        func tapFunction(sender:UITapGestureRecognizer) {
+            let forgortViewController = ForgotViewController()
+            navigationController?.pushViewController(forgortViewController, animated: true)
+        }
     
     func checkNullLogin(){
         
@@ -114,10 +135,10 @@ class LoginViewController: UIViewController {
     }
     
     func customStyle(){
-        let borderBot = CALayer()
-        borderBot.backgroundColor = UIColor.tintColor.cgColor
-        borderBot.frame = CGRect(x: 0, y: self.lblHome.frame.size.height - 2.0, width: self.lblHome.frame.size.width, height: 2.0)
-        lblHome.layer.addSublayer(borderBot)
+//        let borderBot = CALayer()
+//        borderBot.backgroundColor = UIColor.tintColor.cgColor
+//        borderBot.frame = CGRect(x: 0, y: self.lblHome.frame.size.height - 2.0, width: self.lblHome.frame.size.width, height: 2.0)
+//        lblHome.layer.addSublayer(borderBot)
         
         //hide pass
         tfPass.isSecureTextEntry = true

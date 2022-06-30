@@ -11,7 +11,10 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+//    static var share: AppDelegate{
+//        return UIApplication.shared.delegate as! AppDelegate
+//    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -29,15 +32,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             navigationController.viewControllers = [loginScreen, homeViewController]
             window?.rootViewController = navigationController
         }else{
-            let navigationController = UINavigationController(rootViewController: loginScreen)
-            window?.rootViewController = navigationController
+            window?.rootViewController = UINavigationController(rootViewController: loginScreen)
+            
         }
+        
 //        window?.rootViewController = UINavigationController(rootViewController: loginScreen)
         
         return true
     }
 
-
+    
+//    func changeRoot(){
+//        window?.rootViewController
+//    }
 
 }
 

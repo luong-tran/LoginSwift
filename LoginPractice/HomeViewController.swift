@@ -30,6 +30,8 @@ class HomeViewController: UIViewController {
         lblHome.layer.addSublayer(borderBot)
         lblHome.layer.masksToBounds = true
         lblWelcome.text = "Welcome <" + tokenUser.uppercased() + ">"
+        
+        
     }
     
     func addEvent(){
@@ -42,6 +44,8 @@ class HomeViewController: UIViewController {
         func tapFunction(sender:UITapGestureRecognizer) {
             UserDefaults.standard.set(nil, forKey: "username")
             let loginViewController = LoginViewController()
-            UIApplication.shared.delegate?.window??.rootViewController = loginViewController
+            let appdelegate = UIApplication.shared.delegate as! AppDelegate
+            let nav = UINavigationController(rootViewController: loginViewController)
+            appdelegate.window!.rootViewController = nav
         }
 }
