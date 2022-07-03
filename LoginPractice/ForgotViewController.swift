@@ -23,7 +23,9 @@ class ForgotViewController: UIViewController {
 
     func customNavBar(){
         title = "Forgot Password"
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+//        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: nil)
+
+
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(backLoginView));
         navigationController?.addCustomBottomLine(color: UIColor.tintColor, height: 2)
     }
@@ -63,6 +65,8 @@ class ForgotViewController: UIViewController {
                     case .destructive:
                     print("destructive")
                     
+                @unknown default:
+                    print("run")
                 }
             }))
             self.present(alert, animated: true, completion: nil)
@@ -71,13 +75,6 @@ class ForgotViewController: UIViewController {
     
     @objc func backLoginView(){
         checkForgot()
-    }
-    
-    func isValidEmail(email: String) -> Bool {
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-
-        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        return emailPred.evaluate(with: email)
     }
 
 }

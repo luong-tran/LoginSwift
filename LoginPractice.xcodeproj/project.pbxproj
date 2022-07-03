@@ -17,6 +17,8 @@
 		38018CBB28677C2B0032226B /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38018CB928677C2B0032226B /* HomeViewController.xib */; };
 		387A0A0A286DDE0600456F5C /* ForgotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387A0A08286DDE0600456F5C /* ForgotViewController.swift */; };
 		387A0A0B286DDE0600456F5C /* ForgotViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 387A0A09286DDE0600456F5C /* ForgotViewController.xib */; };
+		38A876EE28709A22005FD7C9 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A876EC28709A22005FD7C9 /* RegisterViewController.swift */; };
+		38A876EF28709A22005FD7C9 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38A876ED28709A22005FD7C9 /* RegisterViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		38018CB928677C2B0032226B /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		387A0A08286DDE0600456F5C /* ForgotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotViewController.swift; sourceTree = "<group>"; };
 		387A0A09286DDE0600456F5C /* ForgotViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotViewController.xib; sourceTree = "<group>"; };
+		38A876EC28709A22005FD7C9 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		38A876ED28709A22005FD7C9 /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,8 @@
 				38018CB928677C2B0032226B /* HomeViewController.xib */,
 				387A0A08286DDE0600456F5C /* ForgotViewController.swift */,
 				387A0A09286DDE0600456F5C /* ForgotViewController.xib */,
+				38A876EC28709A22005FD7C9 /* RegisterViewController.swift */,
+				38A876ED28709A22005FD7C9 /* RegisterViewController.xib */,
 			);
 			path = LoginPractice;
 			sourceTree = "<group>";
@@ -220,6 +226,7 @@
 			files = (
 				38018CB728674C3E0032226B /* LoginViewController.xib in Resources */,
 				38018C9128674B530032226B /* LaunchScreen.storyboard in Resources */,
+				38A876EF28709A22005FD7C9 /* RegisterViewController.xib in Resources */,
 				38018CBB28677C2B0032226B /* HomeViewController.xib in Resources */,
 				387A0A0B286DDE0600456F5C /* ForgotViewController.xib in Resources */,
 				38018C8E28674B530032226B /* Assets.xcassets in Resources */,
@@ -249,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				38018CB628674C3E0032226B /* LoginViewController.swift in Sources */,
+				38A876EE28709A22005FD7C9 /* RegisterViewController.swift in Sources */,
 				387A0A0A286DDE0600456F5C /* ForgotViewController.swift in Sources */,
 				38018C8528674B520032226B /* AppDelegate.swift in Sources */,
 				38018CBA28677C2B0032226B /* HomeViewController.swift in Sources */,

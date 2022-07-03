@@ -37,7 +37,7 @@ class LoginViewController: UIViewController {
     }
     
     func customNavigation(){
-        title = "Login"
+        self.title = "Login"
         navigationController?.addCustomBottomLine(color: UIColor.tintColor, height: 2)
     }
     
@@ -46,12 +46,21 @@ class LoginViewController: UIViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.tapFunction))
         lblForgotPass.isUserInteractionEnabled = true
         lblForgotPass.addGestureRecognizer(tap)
+        
+        let register = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.registerFunction))
+        lblCreateAccount.isUserInteractionEnabled = true
+        lblCreateAccount.addGestureRecognizer(register)
     }
     
     @objc
         func tapFunction(sender:UITapGestureRecognizer) {
             let forgortViewController = ForgotViewController()
             navigationController?.pushViewController(forgortViewController, animated: true)
+        }
+    @objc
+        func registerFunction(sender:UITapGestureRecognizer) {
+            let registerViewController = RegisterViewController()
+            navigationController?.pushViewController(registerViewController, animated: true)
         }
     
     func checkNullLogin(){
@@ -181,3 +190,4 @@ class LoginViewController: UIViewController {
 
 
 }
+
