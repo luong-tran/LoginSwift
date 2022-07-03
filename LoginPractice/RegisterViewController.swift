@@ -294,10 +294,33 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate 
     
     //create Picker Gender
     func createGenderPicker(){
+        //toolbar
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        
+        //bar button
+        let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(doneGender))
+        let flexibleButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let cancelBtn = UIBarButtonItem(barButtonSystemItem: .cancel, target: nil, action: #selector(cancelGender))
+        toolbar.setItems([doneBtn, flexibleButton, cancelBtn], animated: true)
+        
+        
+        //assign toolbar
+        lblGender.inputAccessoryView = toolbar
+        
         pickerView.delegate = self
         pickerView.dataSource = self
         
         lblGender.inputView = pickerView
+    }
+    
+    @objc func doneGender(){
+        lblGender.text = genders[0]
+        self.view.endEditing(true)
+    }
+    @objc func cancelGender(){
+        self.view.endEditing(true)
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -315,6 +338,10 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         lblGender.text = genders[row]
         lblGender.resignFirstResponder()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
 }
 
